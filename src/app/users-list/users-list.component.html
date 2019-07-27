@@ -1,0 +1,21 @@
+<section class="user-table">
+    <h2>List Of Users</h2>
+    <table>
+        <thead>
+            <td>No </td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email Address</td>
+            <td>Age</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees" class="empList">
+                <td><span>{{employee.No}} </span></td>
+                <td><span>{{employee.FirstName}} </span></td>
+                <td><span>{{employee.LastName}}</span> </td>
+                <td><span>{{employee.email}} </span></td>
+                <td><span>{{employee.age}} </span></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
