@@ -1,4 +1,4 @@
-export const employees = [
+export const users = [
     {
       No: 1,
       FirstName: 'Mark',

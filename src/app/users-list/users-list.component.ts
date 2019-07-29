@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { users } from '../users';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-users-list',
@@ -7,7 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
 
-  constructor() { }
+  users = users;
+  selectedUser: any = {};
+  editUser(user: any): void {
+    this.selectedUser = user;
+    console.log(this.selectedUser);
+    this.router.navigateByUrl('edit');
+  }
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit() {
   }

@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersListComponent,
-    TopBarComponent
+    TopBarComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
