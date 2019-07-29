@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

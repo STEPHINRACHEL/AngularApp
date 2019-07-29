@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { users } from '../users';
 import { Router } from '@angular/router';
-
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-users-list',
@@ -15,9 +15,10 @@ export class UsersListComponent implements OnInit {
   editUser(user: any): void {
     this.selectedUser = user;
     console.log(this.selectedUser);
+    this.dataService.setuserData(this.selectedUser);
     this.router.navigateByUrl('edit');
   }
-  constructor(private router: Router) {
+  constructor(private router: Router, private dataService: DataService ) {
 
   }
 
