@@ -9,8 +9,8 @@
             <td>Age</td>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users" class="empList" (click)='editUser(user)'>
-                <td><span>{{user.No}} </span></td>
+            <tr *ngFor="let user of users; let id = index" class="empList" (click)='editUser(user, id)'>
+                <td><span>{{id + 1}} </span></td>
                 <td><span>{{user.FirstName}} </span></td>
                 <td><span>{{user.LastName}}</span> </td>
                 <td><span>{{user.email}} </span></td>

@@ -1,15 +1,40 @@
 import { Injectable } from '@angular/core';
+import { users } from './users';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   private USER: any;
-  setuserData(user: any) {
+  private usersList = users;
+  private id: number;
+  private formDataList: any;
+  setSelectedUserData(user: any) {
     this.USER = user;
   }
-  getuserData(): any {
+  getSelectedUserData(): any {
     return this.USER;
+  }
+  setUserId(index) {
+    this.id = index;
+  }
+  getUserId(): number {
+    return this.id;
+  }
+  //store data in local storage
+  setFormData(formData) {
+    console.log(this.id);
+    this.usersList = this.getStoredData();
+    if (formData) {
+      this.usersList[this.id] = formData;
+      localStorage.setItem('userData', JSON.stringify(this.usersList));
+    } else {
+      localStorage.setItem('userData', JSON.stringify(this.usersList));
+    }
+  }
+  //fetch data from local storage
+  getStoredData(): any {
+    return JSON.parse(localStorage.getItem('userData'));
   }
   constructor() { }
 }

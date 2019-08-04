@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { users } from '../users';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
 
@@ -10,18 +9,18 @@ import { DataService } from '../data.service';
 })
 export class UsersListComponent implements OnInit {
 
-  users = users;
+  users = this.dataService.getStoredData();
   selectedUser: any = {};
-  editUser(user: any): void {
+  id: number;
+  editUser(user: any, id: number): void {
     this.selectedUser = user;
-    console.log(this.selectedUser);
-    this.dataService.setuserData(this.selectedUser);
+    this.id = id;
+    this.dataService.setSelectedUserData(this.selectedUser);
+    this.dataService.setUserId(this.id);
     this.router.navigateByUrl('edit');
   }
   constructor(private router: Router, private dataService: DataService ) {
-
   }
-
   ngOnInit() {
   }
 

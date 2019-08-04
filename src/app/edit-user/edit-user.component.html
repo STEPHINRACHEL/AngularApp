@@ -2,10 +2,10 @@
 
 <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
     <div class="form-group">
-        <input type="text" [(ngModel)]='USER.FirstName' name="first" />
+        <input type="text" [(ngModel)]='USER.FirstName' name="FirstName" />
     </div>
     <div class="form-group">
-        <input type="text" [(ngModel)]='USER.LastName' name="last" />
+        <input type="text" [(ngModel)]='USER.LastName' name="LastName" />
     </div>
     <div class="form-group">
         <input type="email" [(ngModel)]='USER.email' name="email" />
