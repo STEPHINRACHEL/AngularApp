@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AuthenticationService } from './shared/authentication.service';
-import { StorageServiceModule } from 'angular-webstorage-service';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +23,7 @@ import { DataService } from './data.service';
     FormsModule,
     StorageServiceModule
   ],
-  providers: [DataService, AuthenticationService],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
