@@ -1,0 +1,19 @@
+<h1>{{USER.FirstName}} {{USER.LastName}}</h1>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <div class="form-group">
+        <input type="text" [(ngModel)]='USER.FirstName' name="FirstName" />
+    </div>
+    <div class="form-group">
+        <input type="text" [(ngModel)]='USER.LastName' name="LastName" />
+    </div>
+    <div class="form-group">
+        <input type="email" [(ngModel)]='USER.email' name="email" />
+    </div>
+    <div class="form-group">
+        <input type="text" [(ngModel)]='USER.age' name="age" />
+    </div>
+    <div class="form-group">
+        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
