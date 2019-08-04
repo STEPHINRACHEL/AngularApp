@@ -20,11 +20,8 @@ export class UsersListComponent implements OnInit {
     this.router.navigateByUrl('edit');
   }
   constructor(private router: Router, private dataService: DataService ) {
-
   }
-
   ngOnInit() {
-
   }
 
 }

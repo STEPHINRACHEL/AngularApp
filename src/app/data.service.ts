@@ -21,11 +21,9 @@ export class DataService {
   getUserId(): number {
     return this.id;
   }
-  setFormData(formData) {
+  setFormData(formData) { //store edited data in local storage
     console.log(this.id);
-    debugger;
     this.usersList = this.getStoredData();
-    // this.formDataList = formData;
     if (formData) {
       this.usersList[this.id] = formData;
       localStorage.setItem('userData', JSON.stringify(this.usersList));
@@ -33,11 +31,8 @@ export class DataService {
       localStorage.setItem('userData', JSON.stringify(this.usersList));
     }
   }
-  getStoredData(): any {
+  getStoredData(): any { //fetch data stored in local storage
     return JSON.parse(localStorage.getItem('userData'));
-  }
-  getUserList(): any {
-    return this.usersList;
   }
   constructor() { }
 }
