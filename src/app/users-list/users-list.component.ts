@@ -9,8 +9,8 @@ import { DataService } from '../data.service';
 })
 export class UsersListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'FirstName', 'LastName', 'email', 'age'];
-  // users = this.dataService.getStoredData();
-  dataSource = this.dataService.getStoredData();
+  // users = this.dataService.getFormData();
+  dataSource = this.dataService.getFormData();
   selectedUser: any = {};
   id: number;
   editUser(user: any, id: number): void {

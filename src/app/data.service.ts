@@ -24,8 +24,7 @@ export class DataService {
   //store data in local storage
   setFormData(formData) {
     console.log(this.id);
-    debugger;
-    this.usersList = this.getStoredData();
+    this.usersList = this.getFormData();
     if (formData) {
       formData.position = this.id + 1;
       this.usersList[this.id] = formData;
@@ -35,8 +34,8 @@ export class DataService {
     }
   }
   //fetch data from local storage
-  getStoredData(): any {
-    if (!localStorage.getItem('userData')){
+  getFormData(): any {
+    if (!localStorage.getItem('userData')) {
       return this.usersList;
     } else {
     return JSON.parse(localStorage.getItem('userData'));
