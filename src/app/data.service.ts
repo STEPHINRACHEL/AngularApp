@@ -21,13 +21,10 @@ export class DataService {
   getUserId(): number {
     return this.id;
   }
-  getUsers(): any{
-    return this.usersList;
-  }
   //store data in local storage
   setFormData(formData) {
-    debugger;
     console.log(this.id);
+    debugger;
     this.usersList = this.getStoredData();
     if (formData) {
       formData.position = this.id + 1;
@@ -39,7 +36,11 @@ export class DataService {
   }
   //fetch data from local storage
   getStoredData(): any {
+    if (!localStorage.getItem('userData')){
+      return this.usersList;
+    } else {
     return JSON.parse(localStorage.getItem('userData'));
+    }
   }
   constructor() { }
 }

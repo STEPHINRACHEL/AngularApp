@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit-user.component.scss']
 })
 export class EditUserComponent implements OnInit {
-  private USER: any;
+  private USER: any = this.dataService.getSelectedUserData();
+
   onSubmit(formData) {
     this.dataService.setFormData(formData);
     this.router.navigateByUrl('');
@@ -20,7 +21,6 @@ export class EditUserComponent implements OnInit {
   }
 
 ngOnInit() {
-  this.USER  = this.dataService.getSelectedUserData();
 }
 
 }
