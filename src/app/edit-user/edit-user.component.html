@@ -1,5 +1,10 @@
-<h1>{{USER.FirstName}} {{USER.LastName}}</h1>
-
+<div class="wrapper">
+    <h1>
+        {{USER.FirstName}} {{USER.LastName}}</h1>
+    <div>
+        <button class="back-btn btn-primary" (click)="backToHome()">Go Back</button>
+    </div>
+</div>
 <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
     <div class="form-group">
         <input type="text" [(ngModel)]='USER.FirstName' name="FirstName" />

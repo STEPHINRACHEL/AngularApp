@@ -8,8 +8,9 @@ import { DataService } from '../data.service';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-
-  users = this.dataService.getStoredData();
+  displayedColumns: string[] = ['position', 'FirstName', 'LastName', 'email', 'age'];
+  // users = this.dataService.getStoredData();
+  dataSource = this.dataService.getStoredData();
   selectedUser: any = {};
   id: number;
   editUser(user: any, id: number): void {

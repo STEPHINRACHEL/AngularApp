@@ -1,24 +1,48 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+}
+
+.basic-container {
+    padding: 30px;
+}
+
+.version-info {
+    font-size: 8pt;
+    float: right;
+}
+
 h2 {
     color: black;
     font-weight: bold;
+    font-size: 35px;
+    font-family: fantasy;
 }
 
-table {
-    width: 100%;
+table.users-list-table {
+    width: 1000px;
+    margin-top: 65px;
+    thead {
+        padding: 20px;
+        // tr {
+        //     th.mat-header-cell {
+        //         font-size: 20px !important;
+        //         font-family: fantasy !important;
+        //     }
+        // }
+    }
+    td[role=gridcell] {
+        cursor: pointer;
+    }
 }
 
-td {
-    padding: 15px;
-    width: 50%;
-    border-bottom: 1px solid gray;
+th.mat-header-cell {
+    font-size: 20px;
+    font-family: cursive;
 }
 
-// .user-table {
-//     margin: 0 auto;
-//     position: absolute;
-//     top: 10px;
-//     left: 10px;
-// }
-.empList span {
-    cursor: pointer;
+.mat-cell {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
 }
